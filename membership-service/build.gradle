@@ -5,7 +5,6 @@ buildscript {
 }
 
 plugins {
-    id 'org.springframework.boot' version '2.5.2'
     id 'java'
 }
 
@@ -19,7 +18,7 @@ apply plugin: 'java-library'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group 'me.timonpay'
+group 'me.timonpay.membership'
 version '1.0-SNAPSHOT'
 
 repositories {
