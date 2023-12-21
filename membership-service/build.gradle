@@ -1,38 +1,15 @@
-buildscript {
-    dependencies {
-        classpath "io.spring.gradle:dependency-management-plugin:0.5.1.RELEASE"
-    }
-}
-
 plugins {
-    id 'java'
+    id 'com.palantir.docker' version '0.25.0'
+}
+ext {
+    axonversion = "4.6.0"
 }
 
-compileJava {
-    sourceCompatibility = 11
-    targetCompatibility = 11
-}
-
-apply plugin: 'java'
-apply plugin: 'java-library'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
 
 group 'me.timonpay.membership'
-version '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
-}
+version '0.0.1-SNAPSHOP'
 
 dependencies {
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
-    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
-    implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
-    testImplementation 'com.tngtech.archunit:archunit:1.0.1'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
