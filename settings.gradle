@@ -1,3 +1,4 @@
 rootProject.name = 'TimonPay'
 include 'membership-service'
+include 'common'
 
