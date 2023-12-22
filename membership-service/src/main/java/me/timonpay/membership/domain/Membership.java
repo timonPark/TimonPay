@@ -24,7 +24,7 @@ public class Membership {
 	private final boolean isValid;
 
 	@Getter
-	private final boolean isCorp;
+	private final String aggregateIdentifier;
 
 	// Membershop
 	// 오염이 되면 안되는 클래스, 고객 정보, 핵심 도메인
@@ -34,62 +34,62 @@ public class Membership {
 			MembershipEmail membershipEmail,
 			MembershipAdderess membershipAdderess,
 			MembershipIsValid membershipIsValid,
-			MembershipIsCorp membershipIsCorp) {
+			MembershipAggregateIdentifier membershipAggregateIdentifier) {
 		return new Membership(
-				membershipId.membershipIdValue,
-				membershipName.nameValue,
-				membershipEmail.emailValue,
-				membershipAdderess.addressValue,
-				membershipIsValid.isValidValue,
-				membershipIsCorp.isCorpValue
+				membershipId.membershipId,
+				membershipName.name,
+				membershipEmail.email,
+				membershipAdderess.address,
+				membershipIsValid.isValid,
+				membershipAggregateIdentifier.aggregateIdentifier
 		);
 	}
 
 	@Value
 	public static class MembershipId {
-		String membershipIdValue;
 		public MembershipId(String value) {
-			this.membershipIdValue = value;
+			this.membershipId = value;
 		}
+		String membershipId;
 	}
 
 	@Value
 	public static class MembershipName {
-		String nameValue;
 		public MembershipName(String value) {
-			this.nameValue = value;
+			this.name = value;
 		}
+		String name;
 	}
 
 	@Value
 	public static class MembershipEmail {
-		String emailValue;
 		public MembershipEmail(String value) {
-			this.emailValue = value;
+			this.email = value;
 		}
+		String email;
 	}
 
 	@Value
 	public static class MembershipAdderess {
-		String addressValue;
 		public MembershipAdderess(String value) {
-			this.addressValue = value;
+			this.address = value;
 		}
+		String address;
 	}
 
 	@Value
 	public static class MembershipIsValid {
-		boolean isValidValue;
 		public MembershipIsValid(boolean value) {
-			this.isValidValue = value;
+			this.isValid = value;
 		}
+		boolean isValid;
 	}
 
 	@Value
-	public static class MembershipIsCorp {
-		boolean isCorpValue;
-		public MembershipIsCorp(boolean value) {
-			this.isCorpValue = value;
+	public static class MembershipAggregateIdentifier {
+		public MembershipAggregateIdentifier(String value) {
+			this.aggregateIdentifier = value;
 		}
+		String aggregateIdentifier;
 	}
 }
